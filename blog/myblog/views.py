@@ -12,6 +12,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.contrib.auth import logout
 from django.urls import reverse
+from django.db.models import Q
 
 class MainView(View):
     def get(self, request, *args, **kwargs):
@@ -110,4 +111,20 @@ class SuccessView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'myblog/success.html', context={
             'title': 'Спасибо'
+        })
+    
+    
+
+class SearchResultsView(View):
+    def get(self, request, *args, **kwargs):
+        query = request.GET.get('q')
+        results = ""
+        if query:
+            results = Post.objects.filter(
+                Q(h1__icontains=query) | Q(content__icontains=query)
+            )
+        return render(request, 'myblog/search.html', context={
+            'title': 'Поиск',
+            'results': results,
+            'count': len(results)
         })

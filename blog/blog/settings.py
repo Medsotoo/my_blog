@@ -165,7 +165,7 @@ CKEDITOR_CONFIGS = {
 LOGOUT_REDIRECT_URL = "/"
 
 
-###################################### для настройки почты гугла для отправки формы обратной связи вьюха (FeedBackView)(сейчас я указал почту mail)
+####################################### для настройки почты гугла для отправки формы обратной связи вьюха (FeedBackView)(сейчас я указал почту mail)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
