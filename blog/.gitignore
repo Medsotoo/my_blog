@@ -1,0 +1,31 @@
+# Virtual environment
+myvenv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+
+# Database
+db.sqlite3
+
+# Environment variables
+.env
+.env.local
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Static and media files (если они не хранятся в Git)
+static/
+media/
+
+# Локальные настройки
+local_settings.py
